@@ -8,4 +8,4 @@ Interfaces and code that could be used in abstract ways in a range of situations
 
 ## License
 
-[MIT](https://github.com/blbergwall/depend/blob/master/LICENSE.txt)
+[MIT](https://github.com/blbgo/general/blob/master/LICENSE.txt)

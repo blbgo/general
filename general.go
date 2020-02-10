@@ -16,3 +16,18 @@ type Shutdowner interface {
 	// Shutdown indicates to the implementer that shutdown is needed with a possible error
 	Shutdown(err error)
 }
+
+// Logger is a minimal interface to support logging
+type Logger interface {
+	Log(v ...interface{}) error
+	Logf(format string, v ...interface{}) error
+}
+
+// Task represents a process that can be run and its inputs
+type Task interface {
+	// Name must return the name of the task with passible namespacing separated by slashes
+	// Example "Account/Create"
+	Name() string
+	Inputs() []string
+	Run(inputs ...string) error
+}
