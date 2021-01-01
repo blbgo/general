@@ -2,6 +2,8 @@
 // situations
 package general
 
+import "io"
+
 // DelayCloser is an interface that should be implemented by values that need to be closed but may
 // require some time to do so.  Usually because they manage one or more worker threads.
 //
@@ -30,6 +32,7 @@ type LoggerFactory interface {
 
 // Dumper is a minimal interface to support dumping large chunks of data
 type Dumper interface {
+	io.Writer
 	Dump(data []byte) error
 	DumpObj(obj interface{}) error
 }
